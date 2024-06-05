@@ -1,0 +1,5 @@
+{
+    "sale_already_registered": "Venda já registrada",
+    "required_columns_are_missing": "As seguintes colunas obrigatórias estão ausentes: :columns",
+    "required_column_values_are_missing": "Os valoes das seguintes colunas obrigatórias estão ausentes: :columns"
+}
