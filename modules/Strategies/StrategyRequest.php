@@ -38,8 +38,7 @@ class StrategyRequest extends Request
             Strategy::CHARACTERISTICS => ['required', 'string'],
             Strategy::ACTIVITIES => ['required', 'string'],
             Strategy::APPLIED_RESOURCES => ['required', 'string'],
-            Strategy::COURSE => ['nullable', 'string'],
-            Strategy::DISCIPLINE => ['nullable', 'string'],
+            Strategy::REFERENCE => ['required', 'string'],
         ];
     }
 
@@ -54,8 +53,7 @@ class StrategyRequest extends Request
             Strategy::CHARACTERISTICS => ['required', 'string'],
             Strategy::ACTIVITIES => ['required', 'string'],
             Strategy::APPLIED_RESOURCES => ['required', 'string'],
-            Strategy::COURSE => ['nullable', 'string'],
-            Strategy::DISCIPLINE => ['nullable', 'string'],
+            Strategy::REFERENCE => ['required', 'string'],
         ];
     }
 }

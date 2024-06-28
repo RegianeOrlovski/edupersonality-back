@@ -24,8 +24,7 @@ use Users\User;
  * @property string|null               $activities
  * @property string|null               $applied_resources
  * @property array|null                $personalities
- * @property string|null               $course
- * @property string|null               $discipline
+ * @property string|null               $reference
  * @property Carbon|null               $created_at
  * @property Carbon|null               $updated_at
  *
@@ -42,8 +41,7 @@ class Strategy extends Model
     const ACTIVITIES = 'activities';
     const APPLIED_RESOURCES = 'applied_resources';
     const PERSONALITIES = 'personalities';
-    const COURSE = 'course';
-    const DISCIPLINE = 'discipline';
+    const REFERENCE = 'reference';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 

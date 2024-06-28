@@ -10,14 +10,16 @@ enum AbilitiesEnum: string
     // General abilities
     case USERS = 'users';
     case PERMISSIONS = 'permissions';
-    case STRATEGIES = 'strategies';
+    case REGISTER_STRATEGIES = 'register_strategies';
+    case VIEW_STRATEGIES = 'view_strategies';
 
     public static function availableAbilities(): array
     {
         return [
             self::USERS,
             self::PERMISSIONS,
-            self::STRATEGIES,
+            self::REGISTER_STRATEGIES,
+            self::VIEW_STRATEGIES,
         ];
     }
 
