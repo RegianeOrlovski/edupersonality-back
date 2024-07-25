@@ -39,6 +39,7 @@ class StrategyRequest extends Request
             Strategy::ACTIVITIES => ['required', 'string'],
             Strategy::APPLIED_RESOURCES => ['required', 'string'],
             Strategy::REFERENCE => ['required', 'string'],
+            Strategy::DESCRIPTION => ['nullable', 'string'],
         ];
     }
 
@@ -54,6 +55,7 @@ class StrategyRequest extends Request
             Strategy::ACTIVITIES => ['required', 'string'],
             Strategy::APPLIED_RESOURCES => ['required', 'string'],
             Strategy::REFERENCE => ['required', 'string'],
+            Strategy::DESCRIPTION => ['nullable', 'string'],
         ];
     }
 }
