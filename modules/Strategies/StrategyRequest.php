@@ -58,4 +58,11 @@ class StrategyRequest extends Request
             Strategy::DESCRIPTION => ['nullable', 'string'],
         ];
     }
+
+    public function validateToUploadImage(): array
+    {
+        return [
+            Strategy::IMAGE => [ 'file', 'required', 'max:10240', 'mimes:jpg,jpeg,png'],
+        ];
+    }
 }

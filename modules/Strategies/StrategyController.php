@@ -85,4 +85,11 @@ class StrategyController extends Controller
 
         return $this->response($result['response'], $result['status']);
     }
+
+    public function uploadImage(StrategyRequest $request, Strategy $strategy)
+    {
+        $result = $this->strategyService->uploadImage($strategy, $request->validated('image'));
+
+        return $this->response($result['response'], $result['status']);
+    }
 }

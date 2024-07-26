@@ -26,6 +26,7 @@ use Users\User;
  * @property array|null                $personalities
  * @property string|null               $reference
  * @property string|null               $description
+ * @property string|null               $image
  * @property Carbon|null               $created_at
  * @property Carbon|null               $updated_at
  *
@@ -44,6 +45,7 @@ class Strategy extends Model
     const PERSONALITIES = 'personalities';
     const REFERENCE = 'reference';
     const DESCRIPTION = 'description';
+    const IMAGE = 'image';
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 

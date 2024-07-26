@@ -9,6 +9,7 @@
 namespace Strategies;
 
 use Illuminate\Http\Response;
+use Illuminate\Http\UploadedFile;
 use Kascat\EasyModule\Core\Service;
 
 /**
@@ -87,5 +88,21 @@ class StrategyService extends Service
         $strategy->delete();
 
         return self::buildReturn();
+    }
+
+    public function uploadImage(Strategy $strategy, UploadedFile $image): array
+    {
+        $fileContent = file_get_contents($image->getRealPath());
+        $mimeType = $image->getMimeType();
+
+        $base64Image = 'data:' . $mimeType . ';base64,' . base64_encode($fileContent);
+
+        $strategy->update([
+            Strategy::IMAGE => $base64Image,
+        ]);
+
+        return self::buildReturn([
+            Strategy::IMAGE => $base64Image,
+        ]);
     }
 }
