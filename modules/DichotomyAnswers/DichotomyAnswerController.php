@@ -41,6 +41,13 @@ class DichotomyAnswerController extends Controller
         return $this->response($result['response'], $result['status']);
     }
 
+    public function inferDichotomyAnswers(DichotomyAnswerRequest $request): mixed
+    {
+        $result = $this->dichotomyAnswerService->inferDichotomyAnswers($request->validated());
+
+        return $this->response($result['response'], $result['status']);
+    }
+
     /**
      * @param DichotomyAnswerRequest $request
      * @return mixed

@@ -13,6 +13,7 @@ enum AbilitiesEnum: string
     case REGISTER_STRATEGIES = 'register_strategies';
     case VIEW_STRATEGIES = 'view_strategies';
     case CALC_STRATEGIES = 'calc_strategies';
+    case STRATEGY_INFERENCE = 'strategy_inference';
 
     public static function availableAbilities(): array
     {
@@ -22,6 +23,7 @@ enum AbilitiesEnum: string
             self::REGISTER_STRATEGIES,
             self::VIEW_STRATEGIES,
             self::CALC_STRATEGIES,
+            self::STRATEGY_INFERENCE,
         ];
     }
 

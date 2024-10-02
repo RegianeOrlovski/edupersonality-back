@@ -29,9 +29,16 @@ class DichotomyAnswerRequest extends Request
         ];
     }
 
-    /**
-     * @return array
-     */
+    public function validateToInferDichotomyAnswers(): array
+    {
+        return [
+            DichotomyAnswer::DICHOTOMY_EI => ['required', 'array'],
+            DichotomyAnswer::DICHOTOMY_SN => ['required', 'array'],
+            DichotomyAnswer::DICHOTOMY_TF => ['required', 'array'],
+            DichotomyAnswer::DICHOTOMY_JP => ['required', 'array'],
+        ];
+    }
+
     public function validateToStore(): array
     {
         return [
