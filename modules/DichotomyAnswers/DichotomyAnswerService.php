@@ -45,10 +45,30 @@ class DichotomyAnswerService extends Service
         );
     }
 
-    /**
-     * @param array $data
-     * @return array
-     */
+    public function inferDichotomyAnswers(array $data): array
+    {
+        $data = self::prepareData($data, [
+            DichotomyAnswer::DICHOTOMY_EI => fn($value) => array_map(fn ($answer) => $answer ?: '', $value),
+            DichotomyAnswer::DICHOTOMY_SN => fn($value) => array_map(fn ($answer) => $answer ?: '', $value),
+            DichotomyAnswer::DICHOTOMY_TF => fn($value) => array_map(fn ($answer) => $answer ?: '', $value),
+            DichotomyAnswer::DICHOTOMY_JP => fn($value) => array_map(fn ($answer) => $answer ?: '', $value),
+        ]);
+
+        $letterResult = $this->resolveLetterResult(
+            $data[DichotomyAnswer::DICHOTOMY_EI],
+            $data[DichotomyAnswer::DICHOTOMY_SN],
+            $data[DichotomyAnswer::DICHOTOMY_TF],
+            $data[DichotomyAnswer::DICHOTOMY_JP]
+        );
+
+        $personalities = $this->resolvePersonalities($letterResult);
+
+        return self::buildReturn([
+            'dichotomy_answer' => $data,
+            'personalities' => $personalities
+        ]);
+    }
+
     public function store(array $data): array
     {
         $data = self::prepareData($data, [
